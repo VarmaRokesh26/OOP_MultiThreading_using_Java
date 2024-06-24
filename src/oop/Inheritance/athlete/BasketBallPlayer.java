@@ -2,33 +2,31 @@ package oop.Inheritance.athlete;
 
 import java.util.Random;
 
-public class BasketBallPlayer {
-    
-    private String name;
-    private String nickName;
-    private int yearOfBorn;
-    private String team;
+public class BasketBallPlayer extends Athlete {
 
     private double freeThrowPercentage;
     private double pointsPerGame;
-    private int gamesPlayed;
-    public BasketBallPlayer(String name, String nickName, int yearOfBorn, String team, double freeThrowPercentage,
-            double pointsPerGame, int gamesPlayed) {
-        this.name = name;
-        this.nickName = nickName;
-        this.yearOfBorn = yearOfBorn;
-        this.team = team;
+
+    public BasketBallPlayer(String name, String nickName, int yearOfBorn, String team, double freeThrowPercentage, double pointsPerGame, int gamesPlayed) {
+
+        super(name, nickName, yearOfBorn, team, gamesPlayed);
         this.freeThrowPercentage = freeThrowPercentage;
         this.pointsPerGame = pointsPerGame;
-        this.gamesPlayed = gamesPlayed;
     }
 
     public void freeThrow() {
         Random randomNumberGenerator = new Random();
-        if((randomNumberGenerator.nextDouble() * 100) > freeThrowPercentage) {
-            System.out.println(name + " failed to score free throw");
+        if ((randomNumberGenerator.nextDouble() * 100) > freeThrowPercentage) {
+            System.out.println(super.getName() + " failed to score free throw");
         } else {
-            System.out.println(name + " scored free throw");
+            System.out.println(super.getName() + " scored free throw");
         }
+    }
+
+    @Override
+    public void getBio() {
+        super.getBio();
+        System.out.println("Free Throw Percentage : " + freeThrowPercentage);
+        System.out.println("Points Scored Per Game : " + pointsPerGame);
     }
 }
