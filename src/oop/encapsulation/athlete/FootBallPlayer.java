@@ -1,5 +1,8 @@
 package oop.encapsulation.athlete;
 
+/*
+    Here BasketBallPLayer.java inherits the properties and behavior of Athlete.java
+ */
 public class FootBallPlayer extends Athlete{
 
     private int completions;
@@ -10,6 +13,10 @@ public class FootBallPlayer extends Athlete{
         this.passingYards = passingYards;
     }
 
+    /*  
+        getBio() method is also written in the Athlete.java which only has the Basic info
+        not about the Game info
+    */
     @Override
     public void getBio() {
         super.getBio();

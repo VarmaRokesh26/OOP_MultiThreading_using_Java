@@ -2,6 +2,9 @@ package oop.encapsulation.athlete;
 
 import java.util.Random;
 
+/*
+    Here BasketBallPLayer.java inherits the properties and behavior of AthleteApp.java
+ */
 public class BasketBallPlayer extends Athlete {
 
     private double freeThrowPercentage;
@@ -23,6 +26,10 @@ public class BasketBallPlayer extends Athlete {
         }
     }
 
+    /*  
+        getBio() method is also written in the Athlete.java which only has the Basic info
+        not about the Game info
+    */
     @Override
     public void getBio() {
         super.getBio();
