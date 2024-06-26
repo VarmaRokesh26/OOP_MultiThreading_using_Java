@@ -1,4 +1,4 @@
-package oop.Inheritance.car;
+package oop.inheritance.car;
 
 public class CarsApp {
     public static void main(String arg[]) {

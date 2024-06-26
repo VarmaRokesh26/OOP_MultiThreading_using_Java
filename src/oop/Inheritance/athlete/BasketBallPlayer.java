@@ -1,4 +1,4 @@
-package oop.Inheritance.athlete;
+package oop.inheritance.athlete;
 
 import java.util.Random;
 

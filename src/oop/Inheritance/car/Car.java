@@ -1,4 +1,4 @@
-package oop.Inheritance.car;
+package oop.inheritance.car;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package oop.Inheritance.athlete;
+package oop.inheritance.athlete;
 
 public class AthleteApp {
     public static void main(String[] args) {
