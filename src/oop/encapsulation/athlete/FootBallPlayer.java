@@ -16,4 +16,12 @@ public class FootBallPlayer extends Athlete{
         System.out.println("Completions : " + completions);
         System.out.println("Passing Yards : " + passingYards);
     }
+
+    public void increaseCompletions(int completions) {
+        this.completions += completions;
+    }
+
+    public void increasePassingYards(int passingYards) {
+        this.passingYards += passingYards;
+    }
 }

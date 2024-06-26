@@ -23,6 +23,21 @@ public class Athlete {
     public void getBio() {
         System.out.println("Name : " + name + "(" + nickName + ")");
         System.out.println("Born in the year : " + yearOfBorn);
-        System.out.println("Last Team Played : " + team + "and played " + gamesPlayed + "games");
+        System.out.println("Last Team Played : " + team + " and played " + gamesPlayed + " games");
     }
+
+    public void playGame() {
+        System.out.println(name + " started playing a game");
+        gamesPlayed++;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+
 }
