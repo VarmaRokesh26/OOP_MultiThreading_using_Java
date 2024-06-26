@@ -1,6 +1,7 @@
+## Java Practicing and Recap 
 ## Understanding the fundamentals of Java, Core Concepts, OOPS, Multithreading and Serialization
 
-Here each concepts is practiced with the examples based on Cars and Athlete
+> Here each concepts is practiced with the examples based on Cars and Athlete
 
 ## Folder Structure
 
