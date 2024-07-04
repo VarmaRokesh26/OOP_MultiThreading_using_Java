@@ -32,6 +32,7 @@ public class AthleteApp {
             basketBallPlayer.playGame();
             System.out.println("--------------------------------------------------------");
             basketBallPlayer.getBio();
+            System.out.println(basketBallPlayer.getBodyType());
         }
         
         /*
@@ -54,6 +55,7 @@ public class AthleteApp {
             footBallPlayer.playGame();
             System.out.println("--------------------------------------------------------");
             footBallPlayer.getBio();
+            System.out.println(footBallPlayer.getBodyType());
         }
 
     }

@@ -31,4 +31,9 @@ public class FootBallPlayer extends Athlete{
     public void increasePassingYards(int passingYards) {
         this.passingYards += passingYards;
     }
+
+    @Override
+    public String getBodyType() {
+        return "Big muscle and great endurance.";
+    }
 }

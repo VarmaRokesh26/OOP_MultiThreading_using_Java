@@ -3,7 +3,7 @@ package oop.abstraction.athlete;
 /*
     Athlete.java file is used to encapsulate the data members and methods which are required
  */
-public class Athlete {
+public abstract class Athlete {
 
     // Data members for the thlete Class
     private String name;
@@ -49,5 +49,5 @@ public class Athlete {
         this.team = team;
     }
 
-
+    public abstract String getBodyType();
 }

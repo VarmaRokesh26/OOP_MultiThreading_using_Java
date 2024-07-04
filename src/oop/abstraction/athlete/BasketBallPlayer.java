@@ -59,5 +59,10 @@ public class BasketBallPlayer extends Athlete {
         this.pointsPerGame = pointsPerGame;
     }
 
+    @Override
+    public String getBodyType() {
+        return "Tall and lean muscle.";
+    }
+
     
 }
