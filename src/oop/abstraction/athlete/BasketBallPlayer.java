@@ -38,8 +38,8 @@ public class BasketBallPlayer extends Athlete {
     }
 
     @Override
-    public void playGame() {
-        super.playGame();
+    public void compete() {
+        super.compete();
         freeThrow();
     }
 

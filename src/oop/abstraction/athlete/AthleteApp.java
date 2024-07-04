@@ -29,7 +29,7 @@ public class AthleteApp {
         System.out.println("BasketBall Players List");
         for(BasketBallPlayer basketBallPlayer : basketBallPlayers) {
             System.out.println("--------------------------------------------------------");
-            basketBallPlayer.playGame();
+            basketBallPlayer.compete();
             System.out.println("--------------------------------------------------------");
             basketBallPlayer.getBio();
             System.out.println(basketBallPlayer.getBodyType());
@@ -52,11 +52,18 @@ public class AthleteApp {
         System.out.println("FootBall Players List");
         for(FootBallPlayer footBallPlayer : footBallPlayers) {
             System.out.println("--------------------------------------------------------");
-            footBallPlayer.playGame();
+            footBallPlayer.compete();
             System.out.println("--------------------------------------------------------");
             footBallPlayer.getBio();
             System.out.println(footBallPlayer.getBodyType());
         }
+
+        Swimmer katinka = new Swimmer("Katinka", "Iron lady", 1989, "Team Iron", 542, 845);
+        System.out.println("--------------------------------------------------------");
+            katinka.compete();
+            System.out.println("--------------------------------------------------------");
+            katinka.getBio();
+            System.out.println(katinka.getBodyType());
 
     }
 }
