@@ -60,10 +60,12 @@ public class AthleteApp {
 
         Swimmer katinka = new Swimmer("Katinka", "Iron lady", 1989, "Team Iron", 542, 845);
         System.out.println("--------------------------------------------------------");
-            katinka.compete();
-            System.out.println("--------------------------------------------------------");
-            katinka.getBio();
-            System.out.println(katinka.getBodyType());
+        katinka.compete();
+        katinka.freestyle(100);
+        katinka.freestyle(200);
+        System.out.println("--------------------------------------------------------");
+        katinka.getBio();
+        System.out.println(katinka.getBodyType());
 
     }
 }
