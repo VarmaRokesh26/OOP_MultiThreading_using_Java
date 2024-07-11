@@ -39,9 +39,21 @@ public class Gang {
         int randomNumber = randomNumberGenerator.nextInt(101);
         int summarizedSuccessChange = criminals.length * Criminal.SUCCESS_PERCENTAGE;
         if(randomNumber >= summarizedSuccessChange) 
-        return false;
+            return false;
         return true;
     }
     
-    
+    public void letsRob(Building[] buildings) {
+        int randomBuildingIndex = randomNumberGenerator.nextInt(buildings.length);
+        System.out.println("--------------------------------");
+        if(isSuccessfulRobbery()) {
+            System.out.println("The gang managed o rob the following otems from the " + buildings[randomBuildingIndex].getName() + ": ");
+            for(Items item : buildings[randomBuildingIndex].getItem()) {
+                sumRobbedValue += item.getValue();
+                System.out.println("-" + item.getName());
+            }
+        } else {
+            System.out.println("The gang tired to rob the " + buildings[randomBuildingIndex].getName() + " but the failed");
+        }
+    }
 }
