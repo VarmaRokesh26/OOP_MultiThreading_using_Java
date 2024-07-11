@@ -35,5 +35,13 @@ public class Gang {
         }
     }
     
+    private boolean isSuccessfulRobbery() {
+        int randomNumber = randomNumberGenerator.nextInt(101);
+        int summarizedSuccessChange = criminals.length * Criminal.SUCCESS_PERCENTAGE;
+        if(randomNumber >= summarizedSuccessChange) 
+        return false;
+        return true;
+    }
+    
     
 }
