@@ -21,7 +21,7 @@ public class Police {
 
     public boolean catchCriminals(Gang gang) {
         if(areCriminalsCaught()) {
-            System.out.println(kevinPaul.getName() + "managed to catch the gang");
+            System.out.println(kevinPaul.getName() + " managed to catch the gang");
             if(gang.getSumRobbedValue() > 0) {
                 System.out.println("THe stolen items are recovered");
                 System.out.println("Their overall value is estimated to $" + gang.getSumRobbedValue());
