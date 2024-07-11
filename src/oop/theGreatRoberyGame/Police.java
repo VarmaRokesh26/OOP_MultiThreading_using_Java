@@ -18,4 +18,21 @@ public class Police {
             return false;
         return true;
     }
+
+    public boolean catchCriminals(Gang gang) {
+        if(areCriminalsCaught()) {
+            System.out.println(kevinPaul.getName() + "managed to catch the gang");
+            if(gang.getSumRobbedValue() > 0) {
+                System.out.println("THe stolen items are recovered");
+                System.out.println("Their overall value is estimated to $" + gang.getSumRobbedValue());
+            } else {
+                System.out.println("The gang couldn't steal anything");
+            }
+            return true;
+        } else {
+            System.out.println(kevinPaul.getName() + " couldn't catch the criminal");
+            System.out.println("THey managed to steal items valued $" + gang.getSumRobbedValue());
+            return false;
+        }
+    }
 }
