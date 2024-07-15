@@ -69,4 +69,12 @@ public class Pizza implements Cloneable {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza [name=" + name + 
+            ", pizzaSize=" + pizzaSize + 
+            ", price=" + price + 
+            "]";
+    }
 }
