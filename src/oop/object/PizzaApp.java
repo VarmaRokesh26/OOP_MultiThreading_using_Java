@@ -39,5 +39,10 @@ public class PizzaApp {
         System.out.println(Arrays.toString(anotherPizza.getClass().getDeclaredMethods()));
         System.out.println(anotherPizza.getClass().getSuperclass());
         System.out.println(anotherPizza.getClass());
+        System.out.println("-------------------------------");
+
+        System.out.println(pizzaOrder.hashCode());
+        System.out.println(samePizza.hashCode());
+        System.out.println(anotherPizza.hashCode());
     }
 }
