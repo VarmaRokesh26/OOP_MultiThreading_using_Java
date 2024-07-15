@@ -2,7 +2,7 @@ package oop.object;
 
 public class PizzaApp {
 
-    public static void main(String arg[]) {
+    public static void main(String arg[]) throws CloneNotSupportedException{
         System.out.println("Available Sizes : ");
         for(PizzaSize pizzaSize : PizzaSize.values()) {
             System.out.println("- " + pizzaSize.getPizzaSizeText());
@@ -15,5 +15,11 @@ public class PizzaApp {
         System.out.println("Name: " + pizzaOrder.getName());
         System.out.println("Size: " + pizzaOrder.getPizzaSize().getPizzaSizeText());
         System.out.println("Price: $" + pizzaOrder.getPrice());
+
+        Pizza samePizza = (Pizza) pizzaOrder.clone();
+        System.out.println("I ordered the following pizza:");
+        System.out.println("Name: " + samePizza.getName());
+        System.out.println("Size: " + samePizza.getPizzaSize().getPizzaSizeText());
+        System.out.println("Price: $" + samePizza.getPrice());
     }
 }

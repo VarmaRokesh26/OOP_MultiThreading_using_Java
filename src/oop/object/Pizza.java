@@ -37,4 +37,9 @@ public class Pizza {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
