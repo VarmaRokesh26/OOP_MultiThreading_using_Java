@@ -1,6 +1,8 @@
 package oop.object;
 
-public class Pizza implements Cloneable{
+import java.util.Objects;
+
+public class Pizza implements Cloneable {
 
     private String name;
     private PizzaSize pizzaSize;
@@ -13,9 +15,9 @@ public class Pizza implements Cloneable{
     }
 
     private double calculatePrice() {
-        switch(pizzaSize) {
+        switch (pizzaSize) {
             case SMALL:
-            default :
+            default:
                 return 5.99;
 
             case MEDIUM:
@@ -25,7 +27,7 @@ public class Pizza implements Cloneable{
                 return 9.99;
         }
     }
-    
+
     public String getName() {
         return name;
     }
@@ -42,4 +44,17 @@ public class Pizza implements Cloneable{
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (!(obj instanceof Pizza))
+            return false;
+
+        Pizza pizza = (Pizza) obj;
+        return Objects.equals(pizza.name, name) && price == pizza.price && pizzaSize == pizza.pizzaSize;
+    }
+
 }
