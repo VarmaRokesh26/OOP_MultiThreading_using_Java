@@ -1,5 +1,7 @@
 package oop.object;
 
+import java.util.Arrays;
+
 public class PizzaApp {
 
     public static void main(String arg[]) throws CloneNotSupportedException, NoSuchMethodException{
@@ -23,7 +25,19 @@ public class PizzaApp {
         System.out.println("Name: " + samePizza.getName());
         System.out.println("Size: " + samePizza.getPizzaSize().getPizzaSizeText());
         System.out.println("Price: $" + samePizza.getPrice());
-
-        System.out.println(pizzaOrder.equals(samePizza));
+        
+        System.out.println("-------------------------------");
+        Pizza anotherPizza = new Pizza("Margareta", PizzaSize.LARGE);
+        System.out.println(pizzaOrder.equals(anotherPizza));
+        System.out.println("-------------------------------");
+        
+        System.out.println(anotherPizza.getClass().getSimpleName());
+        System.out.println(anotherPizza.getClass().getName());
+        System.out.println(Arrays.toString(anotherPizza.getClass().getFields()));
+        System.out.println(Arrays.toString(anotherPizza.getClass().getDeclaredFields()));
+        System.out.println(Arrays.deepToString(anotherPizza.getClass().getMethods()));
+        System.out.println(Arrays.toString(anotherPizza.getClass().getDeclaredMethods()));
+        System.out.println(anotherPizza.getClass().getSuperclass());
+        System.out.println(anotherPizza.getClass());
     }
 }
