@@ -1,6 +1,6 @@
 package oop.object;
 
-public class Pizza {
+public class Pizza implements Cloneable{
 
     private String name;
     private PizzaSize pizzaSize;
