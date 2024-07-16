@@ -11,4 +11,11 @@ public class Box<T> {
     public T getTypeData() {
         return typeData;
     }
+
+    @Override
+    public String toString() {
+        return "Box {typeData=" + typeData + "}";
+    }
+
+    
 }
