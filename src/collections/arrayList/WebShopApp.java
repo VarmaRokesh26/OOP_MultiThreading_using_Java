@@ -8,6 +8,7 @@ public class WebShopApp {
 
         products.add(new Product("FIdget Spinner", 3.99, "It's Fun"));
         products.add(new Product("Earbud", 39.99, "Extremly clear Sound, and Waterproof"));
+        products.add(new Product("Earbud", 39.99, "Extremly clear Sound, and Waterproof"));
 
         products.add(1, new Product("36 AAA batteries", 10.99, "High-performance alkaline batteries."));
 
