@@ -7,5 +7,8 @@ public class GenericApp {
         GenericFunction.addNumber(lotteryNumbers);
         GenericFunction.printList(lotteryNumbers);
         GenericFunction.displayToString(lotteryNumbers);
+
+        // GenericFunction<Double> genericFunction = new GenericFunction<>();
+        // genericFunction.printSimpleGenerics(lotteryNumbers);
     }
 }
