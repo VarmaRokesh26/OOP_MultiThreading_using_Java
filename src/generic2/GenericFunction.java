@@ -2,7 +2,7 @@ package generic2;
 import java.util.*;
 public class GenericFunction {
 
-    public static <T> void displaToString(T typeData) {
+    public static <T> void displayToString(T typeData) {
         System.out.println(typeData.toString());
     }
 
