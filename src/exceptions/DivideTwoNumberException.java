@@ -17,7 +17,7 @@ public class DivideTwoNumberException {
         } catch(NullPointerException np) {
             System.out.println("NullPointerException is thrown");
             np.printStackTrace();
-            return 0;
+            return 0; 
         } catch(ZeroDivisorException|NumberFormatException ae) {
             System.out.println("A Number cannot be divided by Zero");
             ae.printStackTrace();
