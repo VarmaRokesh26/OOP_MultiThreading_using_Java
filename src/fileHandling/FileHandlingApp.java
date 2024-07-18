@@ -3,7 +3,7 @@ package fileHandling;
 import java.io.*;
 public class FileHandlingApp {
     public static void main(String[] args) {
-        File quoteFile = new File("quote.txt");
+        File quoteFile = new File("src\\fileHandling\\quote.txt");
 
         try {
             if(quoteFile.createNewFile()) {
