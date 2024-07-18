@@ -1,4 +1,4 @@
-package other;
+package string;
 
 public class StringPerformance {
     public static void main(String arg[]) {
