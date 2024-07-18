@@ -10,18 +10,18 @@ public class DivideTwoNumberException {
 
     public static int divideTwoNumber(int dividend, int divisor) {
         try {
+            if(divisor == 0) {
+                throw new ZeroDivisorException("The Divisor can't be zero - Custom exception");
+            }
             return dividend/divisor;
         } catch(NullPointerException np) {
             System.out.println("NullPointerException is thrown");
             np.printStackTrace();
             return 0;
-        } catch(ArithmeticException ae) {
+        } catch(ZeroDivisorException ae) {
             System.out.println("A Number cannot be divided by Zero");
             ae.printStackTrace();
             return 0;
         } 
-        // finally {
-        //     System.out.println("Exception will be Handled");
-        // }
     }
 }
