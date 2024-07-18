@@ -5,7 +5,7 @@ package oops.abstraction.athlete;
     BasketBallPlayer.java,FootBallPlayer.java and Athlete.java
 
     Here the data is given and at Athlete.java file it is encapsulated 
-    and accessed wiht the getter and setters.
+    and accessed with the getter and setters.
  */
 public class AthleteApp {
     public static void main(String[] args) {
