@@ -14,10 +14,17 @@ public class FileHandlingApp {
             exception.printStackTrace();
         }
 
-        if(quoteFile.renameTo(new File(FILE_DIRECTORY + "famousPersonQuote.txt"))) {
+        File famousPersonQuotesFile = new File(FILE_DIRECTORY + "famousPersonQuote.txt");
+        if(quoteFile.renameTo(famousPersonQuotesFile)) {
             System.out.println("File is Renamed");
         } else {
             System.out.println("File is not Renamed");
+        }
+
+        if(famousPersonQuotesFile.delete()) {
+            System.out.println("File is Deleted");
+        } else {
+            System.out.println("File is not Deleted");
         }
     }
 }
