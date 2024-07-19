@@ -27,5 +27,7 @@ public class FileHandlingMethods {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Get URI Path                    : " + filePath.toURI());
+        System.out.println("-----------------------------------------------------------");
     }
 }
