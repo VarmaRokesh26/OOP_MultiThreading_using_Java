@@ -2,6 +2,7 @@ package fileHandling;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 
 public class FileHandlingMethods {
     public static void main(String arg[]) {
@@ -29,5 +30,24 @@ public class FileHandlingMethods {
         }
         System.out.println("Get URI Path                    : " + filePath.toURI());
         System.out.println("-----------------------------------------------------------");
+        
+        Calendar lastModified = Calendar.getInstance();
+        // System.out.println(lastModified);
+        lastModified.setTimeInMillis(filePath.lastModified());
+        System.out.println("Last Modified                   : " + lastModified.getTime());
+        System.out.println("-----------------------------------------------------------");
+        
+        System.out.println("Total Space                     : " + (filePath.getTotalSpace()/1000000.0) + " MB");
+        System.out.println("Free Space                      : " + (filePath.getFreeSpace()/1000000.0) + " MB");
+        System.out.println("Usable space                    : " + (filePath.getUsableSpace()/1000000.0) + " MB");
+        
+        filePath.setReadOnly();
+        filePath.setReadable(true);
+        filePath.setExecutable(false);
+        System.out.println("-----------------------------------------------------------");
+
+        filePath.setLastModified(Calendar.getInstance().getTimeInMillis());
+        lastModified.setTimeInMillis((filePath.lastModified()));
+        System.out.println("New last Modified               : " + lastModified.getTime());
     }
 }
