@@ -1,0 +1,416 @@
+1. What are the 2 steps in java compilation?
+
+	step1 : Compilatiion java file to Byte code conversion
+	step2 : Byte Code execution
+
+2.What is JVM? What is the use of JVM?
+
+	JVM - Java Virtual Machine
+	JVM consists of 
+		Intrpreter and Runtime Systems Interpreter 
+		includes the JIT compiler, Memory, ClassLoader,
+		Garbage Collector
+	uses
+		- Platform independent
+		- Primary use of JVM is to exeucte java files
+		- memory management
+		- Dynamic Loading and Linking
+		- Performance optimization
+
+3. How does Java ensures portability/ Platform Independence?
+
+	Because of JVM Java is platforma independent were the JVM serves as a abstract layer 
+	between the byte code and underlying hardware and operating systems
+
+	Standard Library - Java provides a comprehensive standard library that abstracts away
+	platform specific details and provides a consistent set of APIs for common tasks 
+	such as I/O Operations, networking, collections, manipulation, GUI Development etc.
+
+4. What is the differnece between JRE, JDK, and JVM. What are part of each of them?
+
+	JDK is the main thing which consists of all JRE and JVM
+	JVM come under JRE
+	were JVM has Iterpreter(interpreter has JIT for native machine code), 
+	Memory manager, Garabge Collector, Class Loader
+
+	were as JRE consists of JVM, set of libraries like util, math, io, sql, lang, default 
+	libraries etc.
+
+	Finally JDK consists of source code, JRE and so on.
+
+5.What is class loader? What is bootstrap class loader?
+
+	A class loader is an object responsible for loading classes. The class loader is an
+	abstract class.
+
+	Bootstrap Class Loader : Bootstrap classLoader is also called Primordial class loader.
+	It is a machine code which kickstarts the operation when the JVM calls it.
+	Bootstrap classLoder loads classes from rt.jar
+	Bootstrap classLoader doesn't have any parent ClassLoaders.
+
+6. What is JIT?
+
+	JIT is an acronym of Just In Time Compiler, which means Interpreter executes the code line 	
+	by line where as the JIT Compiler executes the native code or hotspot of the program.
+	Native code means a method or function which is called or used again and again.
+	which helps for performance optimization
+
+7. What is the static keyword used for in a method?
+
+	Static methods can provide convinent ways to perform common operations associated with a
+	class without creating an instance. 
+
+8. Explain Exception handling wiht an example?
+
+	Exception handling is the process of unwanted or unexpected events when a computer 	
+	programm runs
+	
+9. What is compile time and run time exception handling?
+
+	compile time exception - Compile time exception occurs when compilation phase of the 		
+		program
+	run time exception - Run time exception occurs during the execution pahse of the program
+
+10. What is the differnece between throw, throws, throwable? Show examples of where they are used?
+
+	throw is keyowrd in java which is used to trhow an exception manually. But it can throw 	
+		exception only from type java.lang.Throwable
+
+	throws in java which is used to mention or warn the method or to handle that this method 	
+		may throw mentioned exceptions it can use try catch block or trows itself for 		
+		mention the exception
+
+	throwable is super class for all type of errors and  exception in java. This class is 		
+		memeber of java.lang package. If any customized exception is written it should 		
+		extends the Trowable class.
+
+11. What is the difference between final, finally & finalize keywords? Show examples of where they are used?
+
+	final - is a keyword and access modifier that is used to apply restrictions on variablles, 	
+		methods and classes. Once it is declared it cannot be overridden, will become 		
+		constant final class connot be inherited
+
+	finally - is the block in java Exception handling to execute the important code whether 	
+		the exception occured or not. finally block cleans all the resources in the try 	
+		block.
+	
+	finalize - is the method in java which is used to perform clean up processing just before 
+		the object is garbage collected. It is executed before the object is destroyed.
+
+12. What is Wrapper Class?
+
+	Wrapper class in java is a class which wraps or contains primitive data types.
+
+13. What is autoboxing and unboxing?
+	
+	Autoboxing - Autoboxing is the automatic conversion that the java compiler makes between 	
+		the primitive data types and the corresponding object wrapper class
+
+	UnBoxing - Unboxing is opposite to autoboxing which converts object into corresponging 	
+		primitive data types
+
+14. How do you create a thread in Java?
+	
+	It has two approaches one is by extending the Thread class and other is by implementing 	
+		the Runnable Interface
+
+
+	First approach by extending the Thread class by our class_Name by creating an instance the thread 
+		may accessed to perform its tasks
+
+	Second is by implementing Runnable Iterface and passing it to thread object and perform its tasks
+
+15. What is the difference between a process and a thread?
+	
+	
+	Process - is a instance of running program which consists of program code, data, resources such as
+		memeory, CPU Time, I/O Devices. Each process has its own address space.
+
+	Thread - is lightweight unit of execution within a process. It represents a single sequential 
+		flow of control. Multiple threads can exist within a single process and share the same
+		memory and resources.
+
+16. How do you Synchronize treads?
+
+	Synchronization is a process of coordinating the execution of multiple threads to ensure that
+		they access shared resources in a safe and orderly manner.
+
+	class Table{  
+ 		synchronized void printTable(int n){ 
+   			for(int i=1;i<=5;i++){  
+     				System.out.println(n*i);  
+     				try{  
+      					Thread.sleep(400);  
+     				}catch(Exception e){System.out.println(e);}  
+   			}  
+ 		}  
+	}  
+  
+	public class TestSynchronization3{  
+		public static void main(String args[]){  
+			final Table obj = new Table();//only one object  
+  	
+			Thread t1=new Thread(){  
+				public void run(){  
+					obj.printTable(5);  
+				}  
+			};  
+			Thread t2=new Thread(){  
+				public void run(){  
+					obj.printTable(100);  
+				}  
+			};  
+	  
+			t1.start();  
+			t2.start();  
+		}  
+	}  
+	
+17. What is wait, notify and notifyAll()? Do you use them?
+
+	wait() - method causes the current thread to wait until the other thread invokes the 
+		notify() or notifyAll() method for the same object.
+
+	notify() - method wakes up a single thread that is waiting on the object's monitor(i.e., waiting 
+		in a wait() call)
+
+	notifyAll() - method that wakes up all the threads that is waiting on the object's monitor
+	
+	We use these methods to coordinate the activities of multiple threads, especially in 
+		producer - consumer scenarios, where one or more thread produce data and other counsume it
+	These methods are commonly used in conjunction with a shared object's monitor to manage 
+		access to shared resources and to prevent race conditions and deadlock situations
+
+18. What is a stream? GIve an example.
+	
+	A sequence of elements supporting sequential and parallel aggregate operation
+
+	Example : 
+	 List<Integer> num = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+         List<Integer> evenNum = num.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+	
+19. What is Serialization and De- serialization?
+	
+	Serialization - is the process of converting object into a stream of bytes, this stream of bytes 
+		can be sotored in a file, sent over a network, or stored in a databse
+
+	De-serialization - is a process of reconstructing an object from its serialized form
+
+20. What is a garbage collector in Java? When does it come into play?
+		
+	The Garabage Collector in Java is a built in mechanism responsible for reclaiming the
+		memory of objects which is no longer in use, allowing that memory to be 
+		reused by the program. The primary purpose of Garabage Collector is to manage
+		memory efficiently and prevent memory leaks.
+
+	GC comes to play - GC works automatically without any external instructions by the programmers
+		and also it typically come into play when JVM determines that memory is running low
+		or when certain conditions are met(eg: a certain amount of time is passed since
+		the last garbage collection cycle)
+
+21. Can you call Garbage Collector? How?
+	
+	Yes there are two ways for Call Garbage Collector
+	1 - System.gc();
+	2 - Runtime.getRuntime.gc();
+
+22. What is the difference between compiletime exception and runtime exception? Explain with an example?
+
+
+Compile Time Exception : 
+	import java.io.*;
+
+	public class FileIOExample {
+	    public static void main(String[] args) {
+        	try {
+        	    FileReader fileReader = new FileReader("file.txt");
+        	} catch (IOException e) {
+        	    e.printStackTrace();
+        	}
+    	    }
+	}
+
+Run Time Exception : 
+	import java.util.*;
+	public cass Example {
+	    public static void main(Stirng arg[]) {
+		int arr[] = {1, 2, 3};
+		System.out.println(arr[3]);
+	    }
+	}
+
+23. What is the use of finalize mathod?
+
+	finalize keyword is used to perform clean up processing before the unused object 
+		gets garbage collected
+
+24. What is the diference between synchronization and serailization?
+	
+	Synchronization is a process of coordinating the execution of multiple threads to ensure that
+		they access shared resources in a safe and orderly manner.
+
+	
+
+Collections
+===========
+
+1. What is a pakcage?
+	
+	A package is a way of organizing classes and interfaces in a heirarchical strucutrue for better 
+	modularity, readability, and reusability of code.
+
+2. What is the differenece between Set and Map?
+
+	Set - A set is a collection that contains unique elements. It does not contain duplicate elements
+		Set Interfaces include hashSet, LinkedHashSet, TreeSet
+
+	Map - A map is collection which associated with the key - value pairs, where each 
+		key must be unique and also different key can have same value
+
+3. What is the difference between LinkedHashMap and Treemap?
+
+	LinkedHashMap - Uses Doubly Linked List and Hash Table to maintain entries
+		Which follows a Insertion order which is not in a sorted order
+
+	TreeMap - Uses RedBlack tree data structure to maintain the keys in the sorted order
+		TreeMap always stores the entries in sorted order
+
+4. What is generics?
+
+	A generic type is a generic class or interface that is parameterized over types
+
+5. What is a Vector?
+
+	Vector uses Array Data Structure, It is a synchronized dynamic array. Rarely used 
+		in modern java development due to its synchrnization overhead
+
+6. What is the difference between Vector and ArrayList?
+
+	Vector is synchronized by default which can handle multithread.
+		all methods in vector are Synchronized 
+
+	ArrayList is not synchronized by default but can be explicitly synchronized
+
+7. What is the difference between a stack and queue?
+	
+	Stack stores the data in the order of Last in First Out Manner it has push and pop 
+		for insertion and deletion respectively
+	Queue stores the data in the order of First In First Out Manner it has enqueue 
+		for inserting at rear and dequeue for deleting at front
+
+8. What is the collections heirarchy?
+	
+	---
+
+9. Write an example program to iterate all the elements in a LinkedhashMap?
+
+	---
+
+10. Where is Comparable used? Give an example?
+	
+	Comparable are used for sorting the object within the Collection of Object itself
+
+11. What is inline function?
+
+	---
+
+12. Which one of these is/are synchronized? What do you mean by synchronized?
+(Vector, ArrayList, Stack, Map)
+
+	Stack, and vector are Synchronized but not the ArrayList and Vector
+
+Object Oriented Programming 
+====== ======== ===========
+
+1. What is the difference between class and objects?
+
+	Class is a blueprint or template of creating an object, encapsulating data and 
+		behavior, serving as a fundamental building block for object oriented programming.
+
+2. What are the core concepts of OOPS?
+	
+	Class
+	Object
+	Encapsulation
+	Abstraction
+	Inheritence
+	Polymorphism
+
+3. What is constructor? Show an example
+
+	A Constructor in java is a special method for intializing objects.
+	It has the same name as className 
+	Default Constructor, Parametrized Constructor are the types of Constructor
+
+	public class MyClass {
+		public MyClass() {
+			// your code to be executed
+		}
+	}
+
+4. Explain copy Constructor with an example?
+
+	Acopy constructor in java is a constructor used to create a new object by
+		copying he values of another object of the same class
+
+5. What are access modifiers and what is the use of each of the modifiers?
+	
+	Access modifiers in java control the accessibility of classes, 
+		variables, methods and constructors 	
+
+	Public - Accessible from anywhere. It is the widest accessibility
+	Private - Accessible only wihtin the same class
+	Proteced - Accessible within the same packages or subclasses
+		(even if they are in different packages)
+	Default - Accessible only wihtin the packages
+
+6. What is the default access specifier in a class? What is difference between 
+	private and default access specifier?
+
+	Default access specifier is also known as package - private. It means that if 
+		no access modifier is not specified then the class, or variables or 
+		methods are accessible within the same package
+
+	Private - Accessible within the class
+	Default(Package-Private) - Accessible within the Same package. This allows 
+		the other classes from the same package but not from classes outside the package
+
+7. What is inheritance? Explain with an example?
+	
+	Inheritance in object oriented programming is the mechanism by which a 
+		new class inherits the properties and behaviors(methods) from an 
+		existing class. The existing class is reffered to as the base class, 
+		super class, or parent class while the new class will be reffered to as 
+		derived class, sub class, or child class. This allows the code reuse, 
+		as the subclass can access and extend the functionality of the 
+		super class.
+
+	Example : 
+	class Animal {
+            void eat() {
+                System.out.println("Animal is eating");
+            }
+  	}
+
+	class Dog extends Animal {
+    	    void bark() {
+        	System.out.println("Dog is barking");
+    	    }
+	}
+
+	public class Main {
+            public static void main(String[] args) {
+        	Dog myDog = new Dog();
+        	myDog.eat();
+		myDog.bark();
+    	    }
+	}
+
+8. What is a base class, super class and subclass?
+
+	---
+
+9. What are the different types of inheritance supported?
+
+	
+		
