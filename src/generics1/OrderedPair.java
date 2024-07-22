@@ -1,4 +1,4 @@
-package generics;
+package generics1;
 
 public class OrderedPair<K, V> implements Pair<K, V> {
 
