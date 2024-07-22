@@ -405,12 +405,3 @@ Object Oriented Programming
 		myDog.bark();
     	    }
 	}
-
-8. What is a base class, super class and subclass?
-
-	---
-
-9. What are the different types of inheritance supported?
-
-	
-		
