@@ -1,4 +1,4 @@
-package exceptions;
+package exceptionHandling;
 
 public class DivideTwoNumberException {
     public static void main(String arg[]) {

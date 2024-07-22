@@ -1,4 +1,4 @@
-package exceptions;
+package exceptionHandling;
 
 public class ZeroDivisorException extends Exception{
 
