@@ -17,6 +17,7 @@ public class RockPaperScissorApp {
             String yourMove = sc.nextLine().toLowerCase();
 
             if (yourMove.equals("quit")) {
+                System.out.println("Game Ends!!!");
                 break;
             }
 
