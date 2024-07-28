@@ -2,16 +2,7 @@ hello
 java
 oops
 world
-rokesh
-varma
-laptop
-kishore
-guru
-dev
-singh
 interface
 enum
 abstract
-form
-drive
 computer

@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 public class GameServices {
 
     private static String filePath = "src\\hangMan\\words.txt";
-    
+
     public void start() throws FileNotFoundException{
         Scanner scanner = new Scanner(System.in);
         String randomWord = getRandomWord();
@@ -23,14 +23,13 @@ public class GameServices {
 
         System.out.println("Starting the Game Get Ready with your Guesses :)");
         System.out.println("The length of the word and the number of chances you have is : " + numberOfChances);
-        System.out.println("the word" + new String(guessingWordArray));
-
+        System.out.println("The word" + new String(guessingWordArray));
         // System.out.println(randomWord);
 
         while(true) {
             System.out.println("--------------------------------------");
             System.out.print("Please type in a letter : ");
-            char letter = scanner.nextLine().toUpperCase().charAt(0);
+            char letter = scanner.next().toLowerCase().charAt(0);
             boolean isGuessingCorrect = false;
             
             for (int i = 0; i < randomWordArray.length; i++) {
@@ -41,7 +40,10 @@ public class GameServices {
             }
 
             if(isGuessingCorrect) {
-
+                System.out.println("It's a good Guess");
+                if(isGameFinished(guessingWordArray)) {
+                    break;
+                }
             } else {
                 numberOfChances--;
                 if(numberOfChances == 0) {
@@ -51,12 +53,27 @@ public class GameServices {
                     break;
                 }
 
-                System.out.println("The NUmber of Chances is reduced to : " + numberOfChances);
+                System.out.println("The Number of Chances is reduced to : " + numberOfChances);
                 System.out.println("Try another Letter");
             }
+            
+            System.out.println("The word : " + new String(guessingWordArray));
         }
 
         scanner.close();
+    }
+    
+    private boolean isGameFinished(char[] guessingWordArray) {
+        for(int i=0;i<guessingWordArray.length;i++) {
+            if(guessingWordArray[i] == '_') {
+                return false;
+            }
+        }
+        
+        System.out.println("--------------------------------------");
+        System.out.println("Congratulations You Won");
+        System.out.println("The word is : " + new String(guessingWordArray));
+        return true;
     }
 
     private static String getRandomWord() throws FileNotFoundException{
