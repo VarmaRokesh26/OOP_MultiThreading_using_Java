@@ -8,7 +8,7 @@ public class FileWriterApp {
         String julius_path = "src/filehandling/Julius.txt";
         try (FileWriter bookWriter = new FileWriter(julius_path)) {
             bookWriter.write("Even you, Brutus?");
-            bookWriter.append("\nYes");
+            bookWriter.append("\nYes\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
