@@ -9,7 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class GameServices {
+
+    private static String filePath = "src\\hangMan\\words.txt";
+    
     public void start() throws FileNotFoundException{
+        Scanner scanner = new Scanner(System.in);
         String randomWord = getRandomWord();
         char[] randomWordArray = randomWord.toCharArray();
         int numberOfChances = randomWord.length();
@@ -22,6 +26,37 @@ public class GameServices {
         System.out.println("the word" + new String(guessingWordArray));
 
         // System.out.println(randomWord);
+
+        while(true) {
+            System.out.println("--------------------------------------");
+            System.out.print("Please type in a letter : ");
+            char letter = scanner.nextLine().toUpperCase().charAt(0);
+            boolean isGuessingCorrect = false;
+            
+            for (int i = 0; i < randomWordArray.length; i++) {
+                if(letter == randomWordArray[i]) {
+                    guessingWordArray[i] = letter;
+                    isGuessingCorrect = true;
+                }
+            }
+
+            if(isGuessingCorrect) {
+
+            } else {
+                numberOfChances--;
+                if(numberOfChances == 0) {
+                    System.out.println("Sorry buddy you ran out of chances");
+                    System.out.println("Better luck next Time");
+                    System.out.println("The word is : " + randomWord);
+                    break;
+                }
+
+                System.out.println("The NUmber of Chances is reduced to : " + numberOfChances);
+                System.out.println("Try another Letter");
+            }
+        }
+
+        scanner.close();
     }
 
     private static String getRandomWord() throws FileNotFoundException{
@@ -34,7 +69,7 @@ public class GameServices {
 
     private static List<String> getTheWords() throws FileNotFoundException {
         List<String> words = new ArrayList<>();
-        Scanner wordsScanner = new Scanner(new File("src\\hangMan\\words.txt"));
+        Scanner wordsScanner = new Scanner(new File(filePath));
 
         while(wordsScanner.hasNextLine()) {
             words.add(wordsScanner.nextLine());
