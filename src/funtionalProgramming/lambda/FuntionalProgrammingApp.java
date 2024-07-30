@@ -12,6 +12,12 @@ public class FuntionalProgrammingApp {
             greeter = new GuestUserGreeter();
         }
         welcomeMessageService.greet(greeter);
+
+        MyFunctionType loggedInUserGreeter = ()-> System.out.println("Welcom");
     }
+}
+
+interface MyFunctionType {
+    void myFunction();
 }
  
