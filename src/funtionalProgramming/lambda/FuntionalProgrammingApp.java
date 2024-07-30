@@ -5,7 +5,7 @@ public class FuntionalProgrammingApp {
     public static void main(String[] args) {
         WelcomeMessageService welcomeMessageService = new WelcomeMessageService();
         Greeter greeter;
-
+        boolean isLoggedInUser = true;
         if(isLoggedInUser) {
             greeter = new LoggedInUserGreeter();
         } else {
@@ -14,3 +14,4 @@ public class FuntionalProgrammingApp {
         welcomeMessageService.greet(greeter);
     }
 }
+ 
