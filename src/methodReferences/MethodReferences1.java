@@ -1,6 +1,5 @@
 package methodReferences;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class MethodReferences1 {
@@ -16,8 +15,9 @@ public class MethodReferences1 {
                 new Person("Anna", 45));
 
                 // .sorted((person1, person2) -> person2.getAge().compareTo(person1.getAge()))
+        PersonComaprisonProvider comaprisonProvider = new PersonComaprisonProvider();
         people.stream()
-                .sorted(Comparator.comparing(Person::getName))
+                .sorted(comaprisonProvider::comapreByNameAndAge)
                 .forEach(System.out::println);
     }
 }
