@@ -2,7 +2,7 @@ package methodReferences;
 
 import java.util.List;
 
-public class MethodReferences1 {
+public class MethodReferences {
 
     public static void main(String[] args) {
         List<Person> people = List.of(
@@ -15,9 +15,8 @@ public class MethodReferences1 {
                 new Person("Anna", 45));
 
                 // .sorted((person1, person2) -> person2.getAge().compareTo(person1.getAge()))
-        PersonComaprisonProvider comaprisonProvider = new PersonComaprisonProvider();
         people.stream()
-                .sorted(comaprisonProvider::comapreByNameAndAge)
+                .sorted(PersonComaprisonProvider::comapreByNameAndAge)
                 .forEach(System.out::println);
     }
 }
