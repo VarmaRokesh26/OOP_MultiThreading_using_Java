@@ -4,7 +4,7 @@ package streams;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CollectUtilFinction {
+public class CollectUtilFunction {
 
     public static void main(String[] args) {
         List<String> playerNames = List.of("Usain", "Choppra", "Dhoni", "Rohit");
