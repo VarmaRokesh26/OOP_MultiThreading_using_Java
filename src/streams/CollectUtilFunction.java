@@ -31,6 +31,18 @@ public class CollectUtilFunction {
         Double overAllDamageDouble = playerDamageDoubles.stream()
                 .collect(Collectors.summingDouble(Double::doubleValue));
 
-        System.out.println("Over all Damages : " + overAllDamageDouble);
+        System.out.println("Over all Damages(double) : " + overAllDamageDouble);
+
+        Double averageDamage = playerDamage.stream()
+                .collect(Collectors.averagingInt(Integer::intValue));
+
+        System.out.println("Average Damage : " + averageDamage);
+
+        System.out.println("Damamged Statistics : " + playerDamage.stream()
+                .collect(Collectors.summarizingInt(Integer::intValue))
+                .getMax()
+        );
+
+
     }
 }
