@@ -1,5 +1,7 @@
 package streams;
 
+import java.util.Objects;
+
 public class Product {
 
     private final String name;
@@ -29,6 +31,22 @@ public class Product {
                 ", price=" + price + 
                 ", rating=" + rating + 
                 "]";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, brand, price, rating);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(!(obj instanceof Product)) return false;
+
+        Product product = (Product) obj;
+
+        return product.price == price && product.rating == rating
+            && Objects.equals(product.name, name) && Objects.equals(product.brand, brand);
     }
 
     
