@@ -32,7 +32,7 @@ public class StreamsForEach {
 
         smartWatches.entrySet().stream()
                 .filter(productEntry -> productEntry.getValue() != null  && 
-                productEntry.getValue().getBrand().equals("MorePro"))
+                    productEntry.getValue().getBrand().equals("MorePro"))
                 .forEach(productEntry -> {
                     Product productValue = productEntry.getValue();
                     System.out.println(productValue.getName() + " - " + 
