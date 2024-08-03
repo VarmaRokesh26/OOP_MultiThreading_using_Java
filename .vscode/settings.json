@@ -4,7 +4,9 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "c:\\Program Files\\Java\\jdk-17\\lib\\jrt-fs.jar"
+        "c:\\Program Files\\Java\\jdk-17\\lib\\jrt-fs.jar",
+        "c:\\Program Files\\Java\\jdk-21\\lib\\jrt-fs.jar",
+        "c:\\Program Files\\Java\\jdk-22\\lib\\jrt-fs.jar"
     ],
     "java.format.settings.url": ".vscode/java-formatter.xml"
 }

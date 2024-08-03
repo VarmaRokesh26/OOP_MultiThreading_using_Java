@@ -40,6 +40,6 @@ public class StreamsMinMaxTeeing {
                     (max, min) -> "(" + max.get().getDayTimeTemperature() + "`C, " + min.get().getNightTimeTemperature() + "`C)" 
                 ));
 
-        System.out.println(weatherAveragesCelsius);
+        System.out.println("The highest and te coldest temperature " + weatherAveragesCelsius);
     }
 }
