@@ -58,7 +58,7 @@ public class FindHabitablePlanetApp {
         System.out.println("------------------------------------------------------------------------");
 
         
-        System.out.println("The Planet closest to the distance between sun and earth : ");
+        System.out.println("The planet that is at the same distance from its closest star as the Earth from the Sun:");
         top10Planets.stream()
                 .sorted(Comparator.comparing((Planet planet) -> Math.abs(planet.getClosestStarDistance() - EARTH_SUN_DISTANCE_IN_LIGHT_YEARS)))
                 .limit(1)
