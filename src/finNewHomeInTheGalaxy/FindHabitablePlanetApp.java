@@ -36,5 +36,13 @@ public class FindHabitablePlanetApp {
         System.out.println("THe Coldest Planet on the Galaxy is \"" + theColdestPlanet.get().getName()
                         + "\" at \"" + theColdestPlanet.get().getTemperature() + degree + "C\"");
         System.out.println("------------------------------------------------------------------------");             
+
+        Optional<Planet> theHottestPlanet = planets.stream()
+                .max(Comparator.comparing(Planet::getTemperature));
+        System.out.println("THe Coldest Planet on the Galaxy is \"" + theHottestPlanet.get().getName()
+                        + "\" at \"" + theHottestPlanet.get().getTemperature() + degree + "C\"");
+        System.out.println("------------------------------------------------------------------------");
+        
+        
     }
 }
