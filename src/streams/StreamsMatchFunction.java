@@ -25,6 +25,11 @@ public class StreamsMatchFunction {
         boolean isKiwiAvailable = fruitBoxes.stream()
                 .anyMatch(item -> "kiwi".equals(item.getName()));
 
-        System.out.println("Kiwi fruit is available in the fruit boxes : "+isKiwiAvailable);
+        System.out.println("Kiwi fruit is available in the fruit boxes : " + isKiwiAvailable);
+
+        boolean isNodeMoreExpensive = fruitBoxes.stream()
+                .noneMatch(item -> item.getPrice() > 10);
+
+        System.out.println("None of the fruit Boxes are expensive than 100$ : " + isNodeMoreExpensive);
     }
 }
