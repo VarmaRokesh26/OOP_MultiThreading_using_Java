@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import streams.ExampleDataDefinition.Item;
+
 public class StreamsGroupingBy {
 
     public static void main(String[] args) {

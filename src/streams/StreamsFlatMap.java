@@ -6,6 +6,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import streams.ExampleDataDefinition.CarDealership;
+
 public class StreamsFlatMap {
 
     public static void main(String[] args) {

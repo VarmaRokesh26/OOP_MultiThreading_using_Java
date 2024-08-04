@@ -1,4 +1,4 @@
-package streams;
+package streams.ExampleDataDefinition;
 
 import java.util.List;
 import java.util.Objects;

@@ -2,6 +2,8 @@ package streams;
 
 import java.util.List;
 
+import streams.ExampleDataDefinition.Item;
+
 public class StreamsMatchFunction {
 
     public static void main(String[] args) {

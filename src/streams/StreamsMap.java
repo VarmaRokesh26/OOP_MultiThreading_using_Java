@@ -3,6 +3,8 @@ package streams;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import streams.ExampleDataDefinition.Product;
+
 public class StreamsMap {
 
     public static void main(String arg[]) {

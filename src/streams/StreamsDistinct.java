@@ -3,6 +3,8 @@ package streams;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import streams.ExampleDataDefinition.Product;
+
 public class StreamsDistinct {
 
     public static void main(String[] args) {

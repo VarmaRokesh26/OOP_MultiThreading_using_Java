@@ -1,6 +1,8 @@
 package streams;
 import java.util.List;
 
+import streams.ExampleDataDefinition.Item;
+
 public class StreamsReduce {
 
     public static void main(String[] args) {

@@ -2,6 +2,8 @@ package streams;
 
 import java.util.List;
 
+import streams.ExampleDataDefinition.Product;
+
 public class StreamsFilter {
 
     public static void main(String[] args) {
