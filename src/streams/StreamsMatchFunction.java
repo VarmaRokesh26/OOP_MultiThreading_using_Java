@@ -21,5 +21,10 @@ public class StreamsMatchFunction {
                 .allMatch(item -> item.getPrice() > 1);
 
         System.out.println("All fruit boxes are more expensive than 10$ : " + isMoreExpensive);
+
+        boolean isKiwiAvailable = fruitBoxes.stream()
+                .anyMatch(item -> "kiwi".equals(item.getName()));
+
+        System.out.println("Kiwi fruit is available in the fruit boxes : "+isKiwiAvailable);
     }
 }
