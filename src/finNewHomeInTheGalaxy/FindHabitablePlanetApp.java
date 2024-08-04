@@ -20,6 +20,13 @@ public class FindHabitablePlanetApp {
         
         System.out.println("The Biggest Planet in the Galaxy is \"" + theBiggestPlanet.get().getName()
                         + "\" with \"" + theBiggestPlanet.get().getSize() + "kms\".");
-        System.out.println("------------------------------------------------------------------------");        
+        System.out.println("------------------------------------------------------------------------");
+
+        Optional<Planet> theSmallestPlanet = planets.stream()
+                .min(Comparator.comparing(Planet::getSize));
+
+        System.out.println("The Smallest Planet in the Galaxy is \"" + theSmallestPlanet.get().getName()
+                        + "\" with \"" + theSmallestPlanet.get().getSize() + "kms\".");
+        System.out.println("------------------------------------------------------------------------");
     }
 }
