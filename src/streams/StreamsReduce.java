@@ -19,9 +19,9 @@ public class StreamsReduce {
                 .map(Item::getPrice)
                 .reduce(discount, Double::sum);
 
-        System.out.println("Subtotal: \t\t$" + subTotal);
-        System.out.println("Discount: \t\t$" + discount);
-        System.out.println("Total price: \t\t$" + totalPrice);
+        System.out.println("Subtotal    : $" + subTotal);
+        System.out.println("Discount    : $" + discount);
+        System.out.println("Total price : $" + totalPrice);
 
 
     }
