@@ -1,6 +1,7 @@
 package string;
 
 public class StringPerformance {
+    @SuppressWarnings("unused")
     public static void main(String arg[]) {
         long startTime = System.nanoTime();
 

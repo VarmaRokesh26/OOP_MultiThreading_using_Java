@@ -2,6 +2,7 @@ package oops.classAndObjects;
 
 import java.util.Random;
 
+@SuppressWarnings("unused")
 public class BasketBallPlayer {
     
     private String name;
