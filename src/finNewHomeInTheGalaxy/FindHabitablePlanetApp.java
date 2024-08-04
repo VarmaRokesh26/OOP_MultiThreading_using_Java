@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class FindHabitablePlanetApp {
+    private static char degree = '\u00B0';
 
     public static void main(String[] args) {
 
@@ -28,5 +29,12 @@ public class FindHabitablePlanetApp {
         System.out.println("The Smallest Planet in the Galaxy is \"" + theSmallestPlanet.get().getName()
                         + "\" with \"" + theSmallestPlanet.get().getSize() + "kms\".");
         System.out.println("------------------------------------------------------------------------");
+
+        Optional<Planet> theColdestPlanet = planets.stream()
+                .min(Comparator.comparing(Planet::getTemperature));
+
+        System.out.println("THe Coldest Planet on the Galaxy is \"" + theColdestPlanet.get().getName()
+                        + "\" at \"" + theColdestPlanet.get().getTemperature() + degree + "C\"");
+        System.out.println("------------------------------------------------------------------------");             
     }
 }
