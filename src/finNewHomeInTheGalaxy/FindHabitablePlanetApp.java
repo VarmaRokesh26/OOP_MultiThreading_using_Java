@@ -9,6 +9,7 @@ public class FindHabitablePlanetApp {
     private static char degree = '\u00B0';
     private static final String SOLID = "solid";
     private static final int AVERAGE_EARTH_TEMPERATURE = 15;
+    private static final double EARTH_SUN_DISTANCE_IN_LIGHT_YEARS = 0.00001581;
 
     public static void main(String[] args) {
 
@@ -56,5 +57,11 @@ public class FindHabitablePlanetApp {
         top10Planets.forEach(System.out::println);
         System.out.println("------------------------------------------------------------------------");
 
+        
+        System.out.println("The Planet closest to the distance between sun and earth : ");
+        top10Planets.stream()
+                .sorted(Comparator.comparing((Planet planet) -> Math.abs(planet.getClosestStarDistance() - EARTH_SUN_DISTANCE_IN_LIGHT_YEARS)))
+                .limit(1)
+                .forEach(System.out::println);
     }
 }
