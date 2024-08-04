@@ -1,7 +1,7 @@
 ## Java Practicing and Recap 
 ## Understanding the fundamentals of Java, Core Concepts, OOPS, Multithreading and Serialization
 
-> Here each concepts is practiced with the examples based on Cars and Athlete
+> Here each concepts is practiced with the examples based on Cars and Athlete and more
 
 ## Folder Structure
 
@@ -29,8 +29,6 @@ The workspace contains two main folders by default, where:
     - `string` : Performance between StringBuilder, String, StringBufffer and StringTokenizer
 - `lib`: the folder to maintain dependencies
     - `bin`: `.class` files for the respective files in the `src` folder by Default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
 
 ## Dependency Management
 
