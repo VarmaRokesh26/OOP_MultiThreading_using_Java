@@ -3,9 +3,12 @@ package finNewHomeInTheGalaxy;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class FindHabitablePlanetApp {
     private static char degree = '\u00B0';
+    private static final String SOLID = "solid";
+    private static final int AVERAGE_EARTH_TEMPERATURE = 15;
 
     public static void main(String[] args) {
 
@@ -43,6 +46,15 @@ public class FindHabitablePlanetApp {
                         + "\" at \"" + theHottestPlanet.get().getTemperature() + degree + "C\"");
         System.out.println("------------------------------------------------------------------------");
         
+        List<Planet> top10Planets = planets.stream()
+                .filter(planet -> SOLID.equals(planet.getType()))
+                .sorted(Comparator.comparing((Planet planet) -> Math.abs(planet.getTemperature() - AVERAGE_EARTH_TEMPERATURE))
+                    .thenComparing(Planet::getDistanceFromEarth))
+                .limit(10)
+                .collect(Collectors.toList());
         
+        top10Planets.forEach(System.out::println);
+        System.out.println("------------------------------------------------------------------------");
+
     }
 }
