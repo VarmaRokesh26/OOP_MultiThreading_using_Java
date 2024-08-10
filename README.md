@@ -27,6 +27,7 @@ The workspace contains two main folders by default, where:
     - `generic2` : Generics Practice 2
     - `rockPaperScissor` : A Console Game for Rock Paper Scissor
     - `string` : Performance between StringBuilder, String, StringBufffer and StringTokenizer
+    - `mutlithreading`
 - `lib`: the folder to maintain dependencies
     - `bin`: `.class` files for the respective files in the `src` folder by Default.
 
